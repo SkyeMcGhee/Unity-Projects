@@ -7,12 +7,14 @@ public class DiceRoller : MonoBehaviour
 {
     int rollResult;
     int dicePoolNumn;
+    int regDicePool;
+    public TMP_Text regNum;
   
     // Start is called before the first frame update
     void Start()
     {
-        
-        
+      
+
     }
 
     // Update is called once per frame
@@ -22,8 +24,15 @@ public class DiceRoller : MonoBehaviour
     }
    public void onRegularEndEdit()
     {
-        rollResult = Random.Range(1, 10);
-        print(rollResult);
+        /* rollResult = Random.Range(1, 10);
+         print(rollResult);*/
+
+        if (int.TryParse(regNum.text, out int result))
+        {
+            regDicePool = result;
+            print(regDicePool);
+        }
+
 
     }
 }
