@@ -5,12 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private bool altView;
-   public GameObject characterSpriteScript;
+   public CharacterHandler characterSpriteScript;
     CharacterHandler csScript;
     // Start is called before the first frame update
     void Start()
     {
-      CharacterHandler csScript = characterSpriteScript.GetComponent<CharacterHandler>();
+      characterSpriteScript = FindObjectOfType<CharacterHandler>();
     }
 
     // Update is called once per frame
@@ -26,13 +26,13 @@ public class PlayerController : MonoBehaviour
     {
         if (altView == false)
         {
-            csScript.SetSprite(1);
-            altView == true;
+            characterSpriteScript.SetSprite(1);
+            altView = true;
         }
         else
         {
-            csScript.SetSprite(0);
-            altView == false;
+            characterSpriteScript.SetSprite(0);
+            altView = false;
         }
     }
 }
