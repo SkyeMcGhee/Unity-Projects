@@ -41,4 +41,6 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
         Debug.Log("Quit called");
     }
+
+  
 }
